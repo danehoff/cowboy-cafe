@@ -1,4 +1,15 @@
-﻿using System;
+﻿/*
+
+* Author: Dane Hoffman
+
+* Edited by: (If you are not the original author like the CowpokeChili class)
+
+* Class name: Angry Chicken
+
+* Purpose: To hold the values for all the attributes of the angry chicken entree and the special instructions for preparation.
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,13 +18,13 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Angry Chicken entree
     /// </summary>
-    public class AngryChicken
+    public class AngryChicken : Entree
     {
 
         /// <summary>
         /// The price of the chicken
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -24,7 +35,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The calories of the chicken
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -89,7 +100,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the chicken
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
 
             get

@@ -6,7 +6,7 @@
 
 * Class name: Entree
 
-* Purpose: Represents for the sides and can be overridden by derived classes.
+* Purpose: Represents for the entrees and can be overridden by derived classes.
 
 */
 using System;
@@ -16,23 +16,24 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// A base class representing a side
+    /// Class that represents the entrees
     /// </summary>
-    public abstract class Side
+    public abstract class Entree
     {
-        /// <summary>
-        /// Gets the size of the Side
-        /// </summary>
-        public virtual Size Size { get; set; }
 
         /// <summary>
-        /// Gets the price of the side
+        /// Gets the price of the entree
         /// </summary>
         public abstract double Price { get; }
 
         /// <summary>
-        /// Gets the calories of the side
+        /// Gets the calories of the entree
         /// </summary>
         public abstract uint Calories { get; }
+
+        /// <summary>
+        /// Gets the special instructions for the entree
+        /// </summary>
+        public abstract List<string> SpecialInstructions { get; }
     }
 }

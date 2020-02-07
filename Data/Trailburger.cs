@@ -1,4 +1,15 @@
-﻿using System;
+﻿/*
+
+* Author: Dane Hoffman
+
+* Edited by: (If you are not the original author like the CowpokeChili class)
+
+* Class name: Cowpoke Chili
+
+* Purpose:Holds the values for the trail burger's ingredients, attributes, and the special instructions for preparation.
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,13 +18,13 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the TrailBurger entree
     /// </summary>
-    public class TrailBurger
+    public class TrailBurger : Entree
     {
 
         /// <summary>
         /// The price of the burger
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -24,7 +35,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The calories of the burger
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -167,7 +178,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the burger
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
 
             get

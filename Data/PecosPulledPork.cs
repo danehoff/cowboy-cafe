@@ -1,4 +1,15 @@
-﻿using System;
+﻿/*
+
+* Author: Dane Hoffman
+
+* Edited by: (If you are not the original author like the CowpokeChili class)
+
+* Class name: Cowpoke Chili
+
+* Purpose:Holds the values for the pecos pulled pork's entree ingredients, attributes, and the special instructions for preparation.
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,13 +18,13 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Pulled Pork entree
     /// </summary>
-    public class PecosPulledPork
+    public class PecosPulledPork : Entree
     {
 
         /// <summary>
         /// The price of the pulled pork sandwich
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -24,7 +35,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The calories of the pulled pork sandwich
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -89,7 +100,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the sandwich
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
 
             get
