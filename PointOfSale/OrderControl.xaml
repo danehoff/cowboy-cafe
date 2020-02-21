@@ -19,18 +19,25 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <StackPanel>
-            
-            
         
-        <TextBlock TextAlignment="Center">Entrees</TextBlock>
-        <Button Name="AddAngryChickenButton">AngryChicken</Button>
-        <Button>CowPoke Chili</Button>
+        <StackPanel Grid.Column="0">
+            <TextBlock TextAlignment="Center">Entrees</TextBlock>
+            <Button Name="AddAngryChickenButton">AngryChicken</Button>
+            <Button Name="AddCowpokeChiliButton">Cowpoke Chili</Button>
+            <Button Name="AddRustlersRibsButton">Rustler's Ribs</Button>
+            <Button Name="AddPecosPulledPork">Pecos Pulled Pork</Button>
+            <Button Name="AddTrailBurger">Trail Burger</Button>
+            <Button Name="Dakota Double Burger">Dakota Double Burger</Button>
         </StackPanel>
 
-        <StackPanel>
+        <StackPanel Grid.Column="1">
             <TextBlock TextAlignment="Center">Sides</TextBlock>
         </StackPanel>
-        
+
+        <StackPanel Grid.Column="3">
+            <TextBlock TextAlignment="Center">Order</TextBlock>
+            <ListView Name="OrderList"></ListView>
+        </StackPanel>
+
     </Grid>
 </UserControl>
