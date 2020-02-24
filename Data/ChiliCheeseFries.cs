@@ -76,5 +76,13 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Readable string representing entreeside
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return Size +  " Chili Cheese Fries";
+        }
+
     }
 }

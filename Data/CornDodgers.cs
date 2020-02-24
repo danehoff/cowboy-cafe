@@ -77,5 +77,14 @@ namespace CowboyCafe.Data
 
             }
         }
+
+        /// <summary>
+        /// Readable string representing side Corn Dodgers.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return Size + " Corn Dodgers";
+        }
     }
 }

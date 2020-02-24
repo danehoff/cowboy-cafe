@@ -78,5 +78,14 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Readable string representing side Baked Beans.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return Size + " Baked Beans";
+        }
+
     }
 }

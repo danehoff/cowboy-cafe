@@ -330,6 +330,13 @@ namespace CowboyCafe.Data
 
             }
         }
-
+        /// <summary>
+        /// Readable string representing entreee Texas Triple Burger
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Texas Triple Burger";
+        }
     }
 }

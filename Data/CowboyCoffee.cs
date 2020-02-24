@@ -1,12 +1,28 @@
-﻿using System;
+﻿/*
+
+* Author: Dane Hoffman
+
+* Edited by: (If you are not the original author like the CowpokeChili class)
+
+* Class name: Cowboy Coffee
+
+* Purpose: Represents the coffee including, ice, cream, decaf, price, and calories.
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// Cowboy Coffee Class
+    /// </summary>
     public class CowboyCoffee : Drink
     {
-
+        /// <summary>
+        /// Prices of the Coffee based on size.
+        /// </summary>
         public override double Price
         {
 
@@ -62,16 +78,28 @@ namespace CowboyCafe.Data
             }
         }
 
-        private bool cream = false;
+        /// <summary>
+        /// Default bool set to false representing cream.
+        /// </summary>
+        private bool roomForCream = false;
+        /// <summary>
+        /// If the coffee gets cream.
+        /// </summary>
         public bool RoomForCream
         {
 
-            get { return cream; }
-            set { cream = value; }
+            get { return roomForCream; }
+            set { roomForCream = value; }
 
         }
 
+        /// <summary>
+        /// Default bool set to false representing decaf coffee.
+        /// </summary>
         private bool decaf = false;
+        /// <summary>
+        /// If the coffee is decaf or not.
+        /// </summary>
         public bool Decaf
         {
 
@@ -81,12 +109,12 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Default bool set to true as the pickle.
+        /// Default bool set to false as the ice.
         /// </summary>
         private bool ice = false;
 
         /// <summary>
-        /// If the burger has pickle.
+        /// If the coffee gets ice or not.
         /// </summary>
         public bool Ice
         {
@@ -97,6 +125,9 @@ namespace CowboyCafe.Data
 
         }
 
+        /// <summary>
+        /// Instructions including whether or not the coffee gets ice and also checks for cream.
+        /// </summary>
         public override List<string> SpecialInstructions
         {
 
@@ -104,12 +135,21 @@ namespace CowboyCafe.Data
             {
 
                 var instructions = new List<string>();
-                if (!Ice) instructions.Add("Add ice");
-                if (!RoomForCream) instructions.Add("Room for Cream");
-                return instructions;
+                if (ice) instructions.Add("Add ice");
+                if (roomForCream) instructions.Add("Room for Cream");
+                
+                    return instructions;
 
             }
         }
-
+        /// <summary>
+        /// Readable string representing drink Cowboy Coffee.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return Size + " Cowboy Coffee";
+            
+        }
     }
 }

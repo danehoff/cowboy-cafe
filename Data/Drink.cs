@@ -1,9 +1,23 @@
-﻿using System;
+﻿/*
+
+* Author: Dane Hoffman
+
+* Edited by: (If you are not the original author like the CowpokeChili class)
+
+* Class name: Drink
+
+* Purpose: Represents for the drinks and can be overridden by derived classes.
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// Base Class for representing sides.
+    /// </summary>
     public abstract class Drink
     {
 
@@ -30,7 +44,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Gets and sets whether the drink has ice
         /// </summary>
-        public bool Ice { get; set; }
+        public bool Ice { get; }
 
     }
 }

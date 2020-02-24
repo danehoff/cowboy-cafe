@@ -1,14 +1,28 @@
-﻿using System;
+﻿/*
+
+* Author: Dane Hoffman
+
+* Edited by: (If you are not the original author like the CowpokeChili class)
+
+* Class name: Water
+
+* Purpose: Represents the water class including instructions of whether or not the user wants ice or lemon.
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// Base class for Water
+    /// </summary>
     public class Water : Drink
     {
 
         /// <summary>
-        /// The price of the water
+        /// The price of the water????
         /// </summary>
         public override double Price
         {
@@ -19,7 +33,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// The calories of the water
+        /// The calories of the water......
         /// </summary>
         public override uint Calories
         {
@@ -29,7 +43,13 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Default bool set to false representing lemon.
+        /// </summary>
         private bool lemon = false;
+        /// <summary>
+        /// Whether the water gets a lemon or not.
+        /// </summary>
         public bool Lemon
         {
 
@@ -43,7 +63,7 @@ namespace CowboyCafe.Data
         /// </summary>
         private bool ice = true;
         /// <summary>
-        /// If the drink gets ice
+        /// If the drink gets ice.
         /// </summary>
         public bool Ice
         {
@@ -54,6 +74,9 @@ namespace CowboyCafe.Data
 
         }
 
+        /// <summary>
+        /// Instructions including whether to hold the ice and or to add a lemon as well.
+        /// </summary>
         public override List<string> SpecialInstructions
         {
 
@@ -61,12 +84,19 @@ namespace CowboyCafe.Data
             {
 
                 var instructions = new List<string>();
-                if (!Ice) instructions.Add("Hold ice");
-                if (!Lemon) instructions.Add("Add Lemon");
+                if (!ice) instructions.Add("Hold ice");
+                if (!lemon) instructions.Add("Add Lemon");
                 return instructions;
 
             }
         }
-
+        /// <summary>
+        /// Readable string representing drink Water
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return Size + " Water";
+        }
     }
 }

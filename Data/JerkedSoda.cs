@@ -6,7 +6,7 @@
 
 * Class name: Jerked Soda
 
-* Purpose: Represents the sizes for the entrees and sizes.
+* Purpose: Represents the jerked soda including, ice, flavor, price, and calories.
 
 */
 using System;
@@ -15,9 +15,15 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// Jerked Soda Class
+    /// </summary>
     public class JerkedSoda : Drink
     {
 
+        /// <summary>
+        /// Prices for the Soda based on size.
+        /// </summary>
         public override double Price
         {
 
@@ -37,7 +43,7 @@ namespace CowboyCafe.Data
                         return 1.59;
 
                     default:
-                        throw new NotImplementedException("Unknown Price.");
+                        throw new NotImplementedException("Unknown Size.");
 
                 }
 
@@ -73,20 +79,23 @@ namespace CowboyCafe.Data
             }
         }
 
-        
+        private SodaFlavor flav;
+        /// <summary>
+        /// The choosen flavor of the soda.
+        /// </summary>
         public SodaFlavor Flavor
         {
 
             get
             {
 
-                return Flavor;
+                return flav;
 
             }
             set
             {
 
-                Flavor = value;
+                flav = value;
 
 
             }
@@ -95,7 +104,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Default bool set to true as the pickle.
+        /// Default bool set to true as the ice.
         /// </summary>
         private bool ice = true;
 
@@ -111,6 +120,9 @@ namespace CowboyCafe.Data
 
         }
 
+        /// <summary>
+        /// Instructions for the soda being whether or not the user wants ice.
+        /// </summary>
         public override List<string> SpecialInstructions
         {
 
@@ -118,11 +130,18 @@ namespace CowboyCafe.Data
             {
 
                 var instructions = new List<string>();
-                if (!Ice) instructions.Add("hold ice");
+                if (!ice) instructions.Add("Hold Ice");
                 return instructions;
 
             }
         }
-
+        /// <summary>
+        /// Readable string representing drink Jerked Chicken.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return Size + " " + Flavor + " Jerked Soda";
+        }
     }
 }

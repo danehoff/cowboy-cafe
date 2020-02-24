@@ -114,5 +114,14 @@ namespace CowboyCafe.Data
 
             }
         }
+
+        /// <summary>
+        /// Readable string representing entree Angry Chicken.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Angry Chicken";
+        }
     }
 }

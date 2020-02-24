@@ -195,6 +195,13 @@ namespace CowboyCafe.Data
 
             }
         }
-
+        /// <summary>
+        /// Readable string representing entreee Trail Burger
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Trail Burger";
+        }
     }
 }

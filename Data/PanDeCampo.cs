@@ -79,5 +79,15 @@ namespace CowboyCafe.Data
             }
         }
 
+
+        /// <summary>
+        /// Readable string representing side Pan de campo.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return Size + " Pan de Campo";
+        }
+
     }
 }

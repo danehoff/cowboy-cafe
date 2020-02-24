@@ -1,12 +1,43 @@
-﻿using System;
+﻿/*
+
+* Author: Dane Hoffman
+
+* Edited by: (If you are not the original author like the CowpokeChili class)
+
+* Class name: Texxas Tea
+
+* Purpose: Represents the Texas tea including calories, price, lemon, and ice.
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// Base Class for the Texas Tea class
+    /// </summary>
     public class TexasTea: Drink
     {
+        /// <summary>
+        /// Default bool set to false representing sweet tea.
+        /// </summary>
+        private bool sweet = true;
+        /// <summary>
+        /// Whether or not the tea is sweet or not.
+        /// </summary>
+        public bool Sweet
+        {
 
+            get { return sweet; }
+            set { sweet = value; }
+
+        }
+
+        /// <summary>
+        /// Prices for the Tea based on size
+        /// </summary>
         public override double Price
         {
 
@@ -26,7 +57,7 @@ namespace CowboyCafe.Data
                         return 1.00;
 
                     default:
-                        throw new NotImplementedException("Unknown Price.");
+                        throw new NotImplementedException("Unknown Size.");
 
                 }
 
@@ -35,12 +66,33 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// The calories of the coffee
+        /// The total calories in the Tea based on size.
         /// </summary>
         public override uint Calories
         {
             get
             {
+                if(sweet != true)
+                {
+
+                    switch (Size)
+                    {
+
+                        case Size.Large:
+                            return 18;
+
+                        case Size.Medium:
+                            return 11;
+
+                        case Size.Small:
+                            return 5;
+
+                        default:
+                            throw new NotImplementedException("Unknown Size.");
+
+                    }
+
+                }
 
                 switch (Size)
                 {
@@ -62,7 +114,13 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Default bool set to false representing lemon.
+        /// </summary>
         private bool lemon = false;
+        /// <summary>
+        /// Whether or not the tea gets a lemon.
+        /// </summary>
         public bool Lemon
         {
 
@@ -76,7 +134,7 @@ namespace CowboyCafe.Data
         /// </summary>
         private bool ice = true;
         /// <summary>
-        /// If the burger has pickle.
+        /// If the tea gets ice.
         /// </summary>
         public bool Ice
         {
@@ -87,6 +145,9 @@ namespace CowboyCafe.Data
 
         }
 
+        /// <summary>
+        /// Instructions including whether to add ice and or a lemon as well.
+        /// </summary>
         public override List<string> SpecialInstructions
         {
 
@@ -94,12 +155,19 @@ namespace CowboyCafe.Data
             {
 
                 var instructions = new List<string>();
-                if (!Ice) instructions.Add("Hold ice");
-                if (!Lemon) instructions.Add("Add Lemon");
+                if (!ice) instructions.Add("Hold ice");
+                if (!lemon) instructions.Add("Add Lemon");
                 return instructions;
 
             }
         }
-
+        /// <summary>
+        /// Readable string representing drink Texas Tea.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return Size + " Texas Tea";
+        }
     }
 }
