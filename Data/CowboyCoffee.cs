@@ -135,10 +135,10 @@ namespace CowboyCafe.Data
             {
 
                 var instructions = new List<string>();
-                if (ice) instructions.Add("Add ice");
+                if (ice) instructions.Add("Add Ice");
                 if (roomForCream) instructions.Add("Room for Cream");
                 
-                    return instructions;
+                return instructions;
 
             }
         }
@@ -148,7 +148,26 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            return Size + " Cowboy Coffee";
+            switch (Size)
+            {
+
+                case Size.Large:
+                    if (Decaf) return "Large Decaf Cowboy Coffee";
+                    return "Large Cowboy Coffee";
+
+                case Size.Medium:
+                    if (Decaf) return "Medium Decaf Cowboy Coffee";
+                    return "Medium Cowboy Coffee";
+
+                case Size.Small:
+                    if (Decaf) return "Small Decaf Cowboy Coffee";
+                    return "Small Cowboy Coffee";
+
+                default:
+                    throw new NotImplementedException();
+
+            }
+            
             
         }
     }

@@ -18,7 +18,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// Jerked Soda Class
     /// </summary>
-    public class JerkedSoda : Drink
+    public class JerkedSoda : Drink 
     {
 
         /// <summary>
@@ -141,7 +141,56 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            return Size + " " + Flavor + " Jerked Soda";
+            string flavS = "";
+
+            if (Flavor == SodaFlavor.CreamSoda)
+            {
+
+                flavS = "Cream Soda";
+
+            }
+            else if(Flavor == SodaFlavor.OrangeSoda)
+            {
+
+                flavS = "Orange Soda";
+
+            }
+            else if(Flavor == SodaFlavor.Sarsparilla)
+            {
+
+                flavS = "Sarsparilla";
+
+            }
+            else if(Flavor == SodaFlavor.BirchBeer)
+            {
+
+                flavS = "Birch Beer";
+
+            }
+            else
+            {
+
+                flavS = "Root Beer";
+
+            }
+            switch (Size)
+            {
+
+                case Size.Large:
+                    return "Large " + flavS + " Jerked Soda";
+
+                case Size.Medium:
+                    return "Medium " + flavS + " Jerked Soda";
+
+                case Size.Small:
+                    return "Small " + flavS + " Jerked Soda";
+
+                default:
+                    throw new NotImplementedException();
+
+            }
+
+            
         }
     }
 }

@@ -155,8 +155,8 @@ namespace CowboyCafe.Data
             {
 
                 var instructions = new List<string>();
-                if (!ice) instructions.Add("Hold ice");
-                if (!lemon) instructions.Add("Add Lemon");
+                if (!ice) instructions.Add("Hold Ice");
+                if (lemon) instructions.Add("Add Lemon");
                 return instructions;
 
             }
@@ -167,7 +167,25 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            return Size + " Texas Tea";
+            switch (Size)
+            {
+
+                case Size.Large:
+                    if (Sweet) return "Large Texas Sweet Tea";
+                    return "Large Texas Plain Tea";
+
+                case Size.Medium:
+                    if (Sweet) return "Medium Texas Sweet Tea";
+                    return "Medium Texas Plain Tea";
+
+                case Size.Small:
+                    if (Sweet) return "Small Texas Sweet Tea";
+                    return "Small Texas Plain Tea";
+
+                default:
+                    throw new NotImplementedException();
+
+            }
         }
     }
 }

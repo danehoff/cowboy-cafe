@@ -84,8 +84,8 @@ namespace CowboyCafe.Data
             {
 
                 var instructions = new List<string>();
-                if (!ice) instructions.Add("Hold ice");
-                if (!lemon) instructions.Add("Add Lemon");
+                if (!ice) instructions.Add("Hold Ice");
+                if (lemon) instructions.Add("Add Lemon");
                 return instructions;
 
             }
@@ -96,7 +96,26 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            return Size + " Water";
+            switch (Size)
+            {
+
+                case Size.Large:
+                    
+                    return "Large Water";
+
+                case Size.Medium:
+                    
+                    return "Medium Water";
+
+                case Size.Small:
+                    
+                    return "Small Water";
+
+                default:
+                    throw new NotImplementedException();
+
+            }
+            
         }
     }
 }
