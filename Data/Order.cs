@@ -20,48 +20,46 @@ namespace CowboyCafe.Data
         public event PropertyChangedEventHandler PropertyChanged;
         private List<IOrderItem> items = new List<IOrderItem>();
         public IEnumerable<IOrderItem> Items => items.ToArray();
-=======
 
-namespace CowboyCafe.Data
-{
-    public class Order :INotifyPropertyChanged
-    {
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public double Subtotal => 0;
-        public IEnumerable<IOrderItem> Items => throw new NotImplementedException();
-
-        public uint OrderNumber { get;  }
->>>>>>> 6db0ae7d03fd7a52dd4a7b5472a8e906198a6014
 
         public void Add(IOrderItem item)
         {
 
-<<<<<<< HEAD
+
             items.Add(item);
+            if(item is INotifyPropertyChanged pcItem) 
+            { 
+
+                /// pcItem.PropertyChanged += OnItemChanged;
+             
+            }
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-            
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+
         }
         public void Remove(IOrderItem item)
         {
 
             items.Remove(item);
+            if (item is INotifyPropertyChanged pcItem)
+            {
+
+                /// pcItem.PropertyChanged -= OnItemChanged;
+
+            }
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-            
-        }
-
-=======
-
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
 
         }
 
-        public void Remove(IOrderItem item)
+        private void OnItemChanged(object sender, PropertyChangedEventArgs e)
         {
 
-
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            if(e.PropertyName == "Price") PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
 
         }
->>>>>>> 6db0ae7d03fd7a52dd4a7b5472a8e906198a6014
+        
+
     }
 }

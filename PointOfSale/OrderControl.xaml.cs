@@ -36,6 +36,65 @@ namespace PointOfSale
             
         }
 
+        public OnMenuISBClick(object,REA args)
+        {
+
+            if(DataContext is Order data)
+            {
+
+                data.Add(new Order());
+
+            }
+
+        }
+
+        public void SwapScreen(FrameworkElement element)
+        {
+
+
+            ContainerVisual.Child = element;
+
+        }
+        void OnMenuISBClick(object o, RoutedEventArgs args)
+        {
+            if (DataContext is Order data)
+            {
+                data.Add(new Order());
+            }
+
+        }
+
+        void OnMenuISBClick(object o, RoutedEventArgs args)
+        {
+
+            var orderControl = this.FindAncestor<OrderControl>();
+
+            if (DataContext is Order data)
+            {
+                if(o is Button button)
+                {
+
+                    switch (button.Tag)
+                    {
+
+                        case "CowpokeChili":
+                            var item = new CowpokeChili();
+                            var screen = new CowpokeChiliCustomize();
+                            screen.DataContext = item;
+                            Order.Add(item);
+                            orderControl?.SwapScreen(screen);
+                            break;
+
+                    }
+
+                }
+
+                data.Add(new Order());
+
+            }
+
+        }
+
         /// <summary>
         /// Adds Angry Chicken to the ordered list
         /// </summary>
