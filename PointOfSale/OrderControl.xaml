@@ -54,9 +54,7 @@
             <ListView Name="OrderList" Height="500"></ListView>
         </StackPanel>
 
-        <Border Name ="Container" Grid.Row="1">
-            <local: MenuItemSelectionControl/>
-        </Border>
+
 
     </Grid>
 </UserControl>

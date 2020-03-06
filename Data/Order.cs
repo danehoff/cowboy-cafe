@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
-<<<<<<< HEAD
+
 using CowboyCafe.Data;
 
 
@@ -27,12 +27,12 @@ namespace CowboyCafe.Data
 
 
             items.Add(item);
-            if(item is INotifyPropertyChanged pcItem) 
-            { 
+            ///if(item is INotifyPropertyChanged pcItem) 
+            ///{ 
 
                 /// pcItem.PropertyChanged += OnItemChanged;
              
-            }
+            ///}
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
 
@@ -41,24 +41,24 @@ namespace CowboyCafe.Data
         {
 
             items.Remove(item);
-            if (item is INotifyPropertyChanged pcItem)
-            {
+            ///if (item is INotifyPropertyChanged pcItem)
+            ///{
 
                 /// pcItem.PropertyChanged -= OnItemChanged;
 
-            }
+            ///}
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
 
         }
 
-        private void OnItemChanged(object sender, PropertyChangedEventArgs e)
-        {
+        ///private void OnItemChanged(object sender, PropertyChangedEventArgs e)
+       /// {
 
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-            if(e.PropertyName == "Price") PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+           /// PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+           /// if(e.PropertyName == "Price") PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
 
-        }
+       /// }
         
 
     }
