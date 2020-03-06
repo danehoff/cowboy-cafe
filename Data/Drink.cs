@@ -18,7 +18,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// Base Class for representing sides.
     /// </summary>
-    public abstract class Drink
+    public abstract class Drink : IOrderItem
     {
 
         /// <summary>
@@ -44,7 +44,12 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Gets and sets whether the drink has ice
         /// </summary>
-        public bool Ice { get; }
+        public virtual bool Ice { get; set; }
+
+        ///protected void NotifyPropertyChanged (string property){
+        ///PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+        ///PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+        ///}
 
     }
 }

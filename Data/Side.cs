@@ -18,7 +18,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A base class representing a side
     /// </summary>
-    public abstract class Side
+    public abstract class Side : IOrderItem
     {
         /// <summary>
         /// Gets the size of the Side
@@ -34,5 +34,15 @@ namespace CowboyCafe.Data
         /// Gets the calories of the side
         /// </summary>
         public abstract uint Calories { get; }
+
+        /// <summary>
+        /// Gets the Special instructions for the sides.
+        /// </summary>
+        public virtual List<string> SpecialInstructions => new List<string>();
+
+        ///protected void NotifyPropertyChanged (string property){
+        ///PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+        ///PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+        ///}
     }
 }

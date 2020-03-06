@@ -10,8 +10,8 @@ namespace CowboyCafe.Data
     public interface IOrderItem 
     {
 
-         Double Price { get; }
-        IEnumerable<string> SpecialInstructions
+        double Price { get; }
+        List<string> SpecialInstructions
         {
             get;
         }

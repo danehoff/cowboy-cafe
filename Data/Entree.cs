@@ -18,7 +18,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// Class that represents the entrees
     /// </summary>
-    public abstract class Entree
+    public abstract class Entree : IOrderItem
     {
 
         /// <summary>
@@ -35,5 +35,11 @@ namespace CowboyCafe.Data
         /// Gets the special instructions for the entree
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
+
+        ///protected void NotifyPropertyChanged (string property){
+        ///PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+        ///PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+        ///}
+
     }
 }

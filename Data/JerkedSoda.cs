@@ -111,7 +111,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// If the burger has pickle.
         /// </summary>
-        public bool Ice
+        public override bool Ice
         {
 
 

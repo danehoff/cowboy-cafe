@@ -8,14 +8,29 @@ using CowboyCafe.Data;
 
 namespace CowboyCafe.Data
 {
-    public class Order
+    public class Order: INotifyPropertyChanged
     {
 
         private uint lastOrderNumber = 0;
 
-        public double Subtotal { get; }
+        public double Subtotal 
+        {
+            
+            get
+            {
+                double totalPrice = 0;
+                foreach(IOrderItem iItem in items)
+                {
+
+                    totalPrice += iItem.Price;
+
+                }
+
+                return totalPrice;
+            }
+        }
         
-        public uint OrderNumber { get; }
+        public uint OrderNumber { get { lastOrderNumber++; return lastOrderNumber; } }
 
         public event PropertyChangedEventHandler PropertyChanged;
         private List<IOrderItem> items = new List<IOrderItem>();

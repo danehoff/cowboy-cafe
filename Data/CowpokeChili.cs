@@ -18,10 +18,10 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Cowpoke Chili entree
     /// </summary>
-    public class CowpokeChili : Entree, INotifyPropertyChanged
+    public class CowpokeChili : Entree///, INotifyPropertyChanged
     {
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        ///public event PropertyChangedEventHandler PropertyChanged;
 
         private bool cheese = true;
         /// <summary>
@@ -32,8 +32,11 @@ namespace CowboyCafe.Data
             get { return cheese; }
             set { 
                 cheese = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                ///protected void NotifyPropertyChanged (string property){
+                ///PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+                ///PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                ///}
+                ///NotifyPropertyChanged("Cheese");
             }
         }
 

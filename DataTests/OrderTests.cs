@@ -95,9 +95,7 @@ namespace CowboyCafe.DataTests
             var item = new MockOrderItem();
             Assert.PropertyChanged(order, propertyName, () =>
             {
-
                 order.Add(item);
-
             });
 
         }
