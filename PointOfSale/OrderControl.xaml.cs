@@ -29,6 +29,7 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderControl : UserControl
     {
+
         public OrderControl()
         {
             InitializeComponent();
@@ -36,16 +37,26 @@ namespace PointOfSale
             this.DataContext = data;
         }
 
+        /// <summary>
+        /// Takes you back to teh item selection control.
+        /// </summary>
         private void ItemSelectionButton_Click(object sender, RoutedEventArgs e)
         {
             
         }
 
+        /// <summary>
+        /// Cancels the order being taken
+        /// </summary>
         private void CancelOrderButton_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
         }
 
+
+        /// <summary>
+        /// Completes the current order
+        /// </summary>
         private void CompleteOrderButton_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();

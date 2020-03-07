@@ -1,4 +1,15 @@
-﻿using System;
+﻿/*
+
+* Author: Dane Hoffman
+
+* Edited by: (If you are not the original author like the CowpokeChili class)
+
+* Class name: Jerked Soda
+
+* Purpose: Represents the buttons for the order items
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -23,6 +34,7 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
         ///public OnMenuISBClick(object,REA args)
         ///{
 
@@ -82,6 +94,11 @@ namespace PointOfSale
 
         ///}
 
+
+
+        /// <summary>
+        /// Adds Angry Chicken to the order list.
+        /// </summary>
         private void AddAngryChickenButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order data)
@@ -92,6 +109,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Adds Cowpoke chill to the order list.
+        /// </summary>
         private void AddCowpokeChiliButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order data)
@@ -102,6 +122,10 @@ namespace PointOfSale
             }
         }
 
+
+        /// <summary>
+        /// Adds Rustlers ribs to the order list.
+        /// </summary>
         private void AddRustlersRibsButton_Click(object sender, RoutedEventArgs e)
         {
 
@@ -114,6 +138,9 @@ namespace PointOfSale
 
         }
 
+        /// <summary>
+        /// Adds Pecos pulled pork to the order list.
+        /// </summary>
         private void AddPecosPulledPorkButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order data)
@@ -124,6 +151,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Adds Trail burger to the order list.
+        /// </summary>
         private void AddTrailBurgerButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order data)
@@ -134,6 +164,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Adds Dakota Double Burger to the order list.
+        /// </summary>
         private void AddDakotaDoubleBurgerButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order data)
@@ -144,6 +177,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Adds texas Triple burger to the order list.
+        /// </summary>
         private void AddTexasTripleBurgerButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order data)
@@ -154,6 +190,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Adds CC Fries to the order list.
+        /// </summary>
         private void AddChiliCheeseFriesButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order data)
@@ -164,6 +203,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Adds corn dodgers to the order list.
+        /// </summary>
         private void AddCornDodgersButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order data)
@@ -174,6 +216,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Adds Pan de Campo to the order list.
+        /// </summary>
         private void AddPanDeCampoButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order data)
@@ -184,6 +229,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Adds Baked beans to the order list.
+        /// </summary>
         private void AddBakedBeansButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order data)
@@ -194,6 +242,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Adds jerked soda to the order list.
+        /// </summary>
         private void AddJerkedSodaButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order data)
@@ -204,6 +255,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Adds Texas Tea to the order list.
+        /// </summary>
         private void AddTexasTeaButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order data)
@@ -214,6 +268,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Adds cowboy Coffee to the order list.
+        /// </summary>
         private void AddCowboyCoffeeButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order data)
@@ -224,6 +281,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Adds Water to the order list.
+        /// </summary>
         private void AddWaterButton_Click(object sender, RoutedEventArgs e)
         {
 
