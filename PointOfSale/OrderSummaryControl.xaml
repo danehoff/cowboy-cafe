@@ -11,29 +11,41 @@
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
         </Style>
     </UserControl.Resources>
-    <StackPanel>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1"/>
 
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
         <TextBlock TextAlignment="Center">Order</TextBlock>
-        <ListBox ItemsSource="{Binding Path=Items}" Name="OrderList">
+        <ListBox ItemsSource="{Binding Path=Items}" Name="OrderList" Grid.Row="1">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="3*"/>
-                            <ColumnDefinition Width="1"/>
+                            <ColumnDefinition Width="1*"/>
 
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition/>
+                            <RowDefinition Height="30"/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
                         <TextBlock Text="{Binding}" Grid.Column="0" Grid.Row="0"/>
                         <TextBlock Text="{Binding Path=Price, StringFormat=c}" TextAlignment="Right" Grid.Column="1" Grid.Row="0" />
+                        <ListView ItemsSource="{Binding Path=SpecialInstructions}" Grid.Row="1" Grid.ColumnSpan="2">
+                            
+                        </ListView>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <TextBlock Text="{Binding Path=Subtotal, StringFormat=c}"/>
-    </StackPanel>
+        <TextBlock Text="{Binding Path=Subtotal, StringFormat=c}" Grid.Row="2"/>
+    </Grid>
 
 </UserControl>

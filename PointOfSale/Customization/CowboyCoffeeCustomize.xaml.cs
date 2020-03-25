@@ -11,19 +11,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PointOfSale.Custom
+namespace PointOfSale.Customization
 {
     /// <summary>
-    /// Interaction logic for CowboyChiliCustomize.xaml
+    /// Interaction logic for CowboyCoffeeCustomize.xaml
     /// </summary>
-    public partial class CowboyChiliCustomize : UserControl
+    public partial class CowboyCoffeeCustomize : UserControl
     {
-        public CowboyChiliCustomize()
+        public CowboyCoffeeCustomize()
         {
             InitializeComponent();
         }
-
-        
-
     }
 }

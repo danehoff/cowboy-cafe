@@ -54,7 +54,10 @@ namespace CowboyCafe.Data
         {
 
             get { return lemon; }
-            set { lemon = value; }
+            set { 
+                lemon = value;
+                NotifyPropertyChanged("Lemon");
+            }
 
         }
 
@@ -65,12 +68,15 @@ namespace CowboyCafe.Data
         /// <summary>
         /// If the drink gets ice.
         /// </summary>
-        public bool Ice
+        public override bool Ice
         {
 
 
             get { return ice; }
-            set { ice = value; }
+            set { 
+                ice = value;
+                NotifyPropertyChanged("Ice");
+            }
 
         }
 

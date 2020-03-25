@@ -96,7 +96,7 @@ namespace CowboyCafe.Data
             {
 
                 flav = value;
-
+                NotifyPropertyChanged("Flavor");
 
             }
 
@@ -116,7 +116,11 @@ namespace CowboyCafe.Data
 
 
             get { return ice; }
-            set { ice = value; }
+            set { 
+                ice = value; 
+                NotifyPropertyChanged("Ice");
+                
+            }
 
         }
 
@@ -138,7 +142,6 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Readable string representing drink Jerked Chicken.
         /// </summary>
-        /// <returns></returns>
         public override string ToString()
         {
             string flavS = "";

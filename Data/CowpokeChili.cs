@@ -18,25 +18,19 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Cowpoke Chili entree
     /// </summary>
-    public class CowpokeChili : Entree///, INotifyPropertyChanged
-    {
-
-        ///public event PropertyChangedEventHandler PropertyChanged;
+    public class CowpokeChili : Entree
+    { 
 
         private bool cheese = true;
         /// <summary>
         /// If the chili is topped with cheese
         /// </summary>
-        public bool Cheese
+        public  bool Cheese
         {
             get { return cheese; }
             set { 
                 cheese = value;
-                ///protected void NotifyPropertyChanged (string property){
-                ///PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
-                ///PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-                ///}
-                ///NotifyPropertyChanged("Cheese");
+                NotifyPropertyChanged("Cheese");
             }
         }
 
@@ -47,7 +41,10 @@ namespace CowboyCafe.Data
         public bool SourCream
         {
             get { return sourCream; }
-            set { sourCream = value; }
+            set { 
+                sourCream = value; 
+                NotifyPropertyChanged("SourCream");
+            }
         }
 
         private bool greenOnions = true;
@@ -57,7 +54,10 @@ namespace CowboyCafe.Data
         public bool GreenOnions
         {
             get { return greenOnions; }
-            set { greenOnions = value; }
+            set { 
+                greenOnions = value; 
+                NotifyPropertyChanged("GreenOnions");
+            }
         }
 
         private bool tortillaStrips = true;
@@ -67,7 +67,10 @@ namespace CowboyCafe.Data
         public bool TortillaStrips
         {
             get { return tortillaStrips; }
-            set { tortillaStrips = value; }
+            set { 
+                tortillaStrips = value; 
+                NotifyPropertyChanged("TortillaStrips");
+            }
         }
 
         /// <summary>

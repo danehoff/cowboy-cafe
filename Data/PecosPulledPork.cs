@@ -64,6 +64,7 @@ namespace CowboyCafe.Data
             {
 
                 bread = value;
+                NotifyPropertyChanged("Bread");
 
 
             }
@@ -92,6 +93,7 @@ namespace CowboyCafe.Data
             {
 
                 pickle = value;
+                NotifyPropertyChanged("Pickle");
 
             }
 

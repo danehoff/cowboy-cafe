@@ -11,6 +11,7 @@
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace CowboyCafe.Data
@@ -18,8 +19,13 @@ namespace CowboyCafe.Data
     /// <summary>
     /// Base Class for representing sides.
     /// </summary>
-    public abstract class Drink : IOrderItem
+    public abstract class Drink : IOrderItem, INotifyPropertyChanged
     {
+
+        /// <summary>
+        /// Event for property changed with a clicked button
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Gets the size of the Drink
@@ -46,10 +52,13 @@ namespace CowboyCafe.Data
         /// </summary>
         public virtual bool Ice { get; set; }
 
-        ///protected void NotifyPropertyChanged (string property){
-        ///PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
-        ///PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-        ///}
+        /// <summary>
+        /// Notifys our special instructions of the change made
+        /// </summary>
+        protected void NotifyPropertyChanged (string property){
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+        }
 
     }
 }

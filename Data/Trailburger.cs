@@ -64,7 +64,7 @@ namespace CowboyCafe.Data
             {
 
                 bun = value;
-
+                NotifyPropertyChanged("Bun");
 
             }
 
@@ -91,6 +91,7 @@ namespace CowboyCafe.Data
             {
 
                 ketchup = value;
+                NotifyPropertyChanged("Ketchup");
 
             }
 
@@ -117,6 +118,7 @@ namespace CowboyCafe.Data
             {
 
                 mustard = value;
+                NotifyPropertyChanged("Mustard");
 
             }
 
@@ -144,6 +146,7 @@ namespace CowboyCafe.Data
             {
 
                 pickle = value;
+                NotifyPropertyChanged("Pickle");
 
             }
 
@@ -170,6 +173,7 @@ namespace CowboyCafe.Data
             {
 
                 cheese = value;
+                NotifyPropertyChanged("Cheese");
 
             }
 

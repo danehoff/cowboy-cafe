@@ -89,7 +89,10 @@ namespace CowboyCafe.Data
         {
 
             get { return roomForCream; }
-            set { roomForCream = value; }
+            set { 
+                roomForCream = value;
+                NotifyPropertyChanged("RoomForCream");
+            }
 
         }
 
@@ -104,7 +107,10 @@ namespace CowboyCafe.Data
         {
 
             get { return decaf; }
-            set { decaf = value; }
+            set { 
+                decaf = value;
+                NotifyPropertyChanged("Decaf");
+            }
 
         }
 
@@ -116,12 +122,16 @@ namespace CowboyCafe.Data
         /// <summary>
         /// If the coffee gets ice or not.
         /// </summary>
-        public bool Ice
+        public override bool Ice
         {
 
 
             get { return ice; }
-            set { ice = value; }
+            set { 
+                ice = value;
+                NotifyPropertyChanged("Ice");
+            
+            }
 
         }
 

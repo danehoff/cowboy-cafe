@@ -30,19 +30,34 @@ namespace PointOfSale
     public partial class OrderControl : UserControl
     {
 
+        MenuItemSelectionControl menu = new MenuItemSelectionControl();
+
         public OrderControl()
         {
             InitializeComponent();
             var data = new Order();
             this.DataContext = data;
+
         }
 
         /// <summary>
-        /// Takes you back to teh item selection control.
+        /// Swaps screen for instructions on items ordered
+        /// </summary>
+        /// <param name="element"></param>
+        public void SwapScreen(FrameworkElement element)
+        {
+
+            menuContent.Child = element;
+
+        }
+
+        /// <summary>
+        /// Takes you back to the item selection control.
         /// </summary>
         private void ItemSelectionButton_Click(object sender, RoutedEventArgs e)
         {
-            
+
+            SwapScreen(menu);
         }
 
         /// <summary>

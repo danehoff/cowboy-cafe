@@ -12,14 +12,20 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// A base class representing a side
     /// </summary>
-    public abstract class Side : IOrderItem
+    public abstract class Side : IOrderItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Event for property changed with a clicked button
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Gets the size of the Side
         /// </summary>
@@ -40,9 +46,13 @@ namespace CowboyCafe.Data
         /// </summary>
         public virtual List<string> SpecialInstructions => new List<string>();
 
-        ///protected void NotifyPropertyChanged (string property){
-        ///PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
-        ///PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-        ///}
+        /// <summary>
+        /// Notifys our special instructions of the change made
+        /// </summary>
+        protected void NotifyPropertyChanged (string property)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+        }
     }
 }
