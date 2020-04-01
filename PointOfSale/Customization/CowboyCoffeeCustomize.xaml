@@ -20,17 +20,32 @@
         </Grid.RowDefinitions>
         <TextBlock FontSize="30">Customize this order of Coffee...</TextBlock>
         <StackPanel  Orientation="Horizontal" Grid.Column="1"  Grid.Row="1">
-            <CheckBox IsChecked="{Binding Path=RoomForCream}"/>
-            <TextBlock Text="Room For Cream"/>
+            <CheckBox IsChecked="{Binding Path=RoomForCream}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2"/>
+                </CheckBox.LayoutTransform>
+                <TextBlock Text="Room For Cream" />
+            </CheckBox>
+            
 
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1">
-            <CheckBox IsChecked="{Binding Path=Decaf}"/>
-            <TextBlock Text="Decaf"/>
+            <CheckBox IsChecked="{Binding Path=Decaf}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2"/>
+                </CheckBox.LayoutTransform>
+                <TextBlock Text="Decaf"/>
+            </CheckBox>
+            
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
-            <CheckBox IsChecked="{Binding Path=Ice}"/>
-            <TextBlock Text="Ice"/>
+            <CheckBox IsChecked="{Binding Path=Ice}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2"/>
+                </CheckBox.LayoutTransform>
+                <TextBlock Text="Ice" />
+            </CheckBox>
+            
         </StackPanel>
     </Grid>
 </UserControl>

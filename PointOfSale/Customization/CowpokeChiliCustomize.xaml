@@ -22,22 +22,39 @@
         </Grid.RowDefinitions>
         <TextBlock FontSize="30">Customize this order of Chili...</TextBlock>
         <StackPanel  Orientation="Horizontal" Grid.Column="1"  Grid.Row="1">
-            <CheckBox IsChecked="{Binding Path=Cheese}"/>
-            <TextBlock Text="Cheese"/>
+            <CheckBox IsChecked="{Binding Path=Cheese}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2"/>
+                </CheckBox.LayoutTransform>
+                <TextBlock Text="Cheese" />
+            </CheckBox>
+            
 
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1">
-            <CheckBox IsChecked="{Binding Path=SourCream}"/>
-            <TextBlock Text="Sour Cream"/>
+            <CheckBox IsChecked="{Binding Path=SourCream}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2"/>
+                </CheckBox.LayoutTransform>
+                <TextBlock Text="Sour Cream"/>
+            </CheckBox>
+            
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
             <CheckBox IsChecked="{Binding Path=GreenOnions}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2"/>
+                </CheckBox.LayoutTransform>
                 <TextBlock Text="Green Onions"/>
             </CheckBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1">
-            <CheckBox IsChecked="{Binding Path=TortillaStrips}"/>
-            <TextBlock Text="Tortilla Strips"/>
+            <CheckBox IsChecked="{Binding Path=TortillaStrips}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2"/>
+                </CheckBox.LayoutTransform>
+                <TextBlock Text="Tortilla Strips"/>
+            </CheckBox>
         </StackPanel>
 
 

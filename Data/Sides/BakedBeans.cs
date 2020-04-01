@@ -4,25 +4,29 @@
 
 * Edited by: (If you are not the original author like the CowpokeChili class)
 
-* Class name: Pan de Campo
+* Class name: Baked Beans
 
-* Purpose: Holds the price and calories of the baked pan de campo based on size.
+* Purpose: Holds the price and calories of the baked beans based on size.
 
 */
 using System;
 using System.Collections.Generic;
 using System.Text;
+using CowboyCafe.Data;
+using CowboyCafe.Data.Sides;
+using CowboyCafe.Data.Drinks;
+using CowboyCafe.Data.Enums;
 
-namespace CowboyCafe.Data
+
+namespace CowboyCafe.Data.Sides
 {
     /// <summary>
-    /// A class representing the pan de campo side
+    /// A class representing the Baked Beans Side
     /// </summary>
-    public class PanDeCampo : Side
+    public class BakedBeans : Side
     {
-
         /// <summary>
-        /// The price of the pan de campo based on size
+        /// The price of the baked beans based on size
         /// </summary>
         public override double Price
         {
@@ -52,7 +56,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// The calorires of the pan de campo based on side.
+        /// The Calories of the baked beans based on size
         /// </summary>
         public override uint Calories
         {
@@ -63,13 +67,13 @@ namespace CowboyCafe.Data
                 {
 
                     case Size.Large:
-                        return 367;
+                        return 410;
 
                     case Size.Medium:
-                        return 269;
+                        return 378;
 
                     case Size.Small:
-                        return 227;
+                        return 312;
 
                     default:
                         throw new NotImplementedException("Unknown Size.");
@@ -79,15 +83,16 @@ namespace CowboyCafe.Data
             }
         }
 
-
         /// <summary>
-        /// Readable string representing side Pan de campo.
+        /// Readable string representing side Baked Beans.
         /// </summary>
         /// <returns></returns>
         public override string ToString()
         {
-            return Size + " Pan de Campo";
+            return Size + " Baked Beans";
         }
+
+        
 
     }
 }

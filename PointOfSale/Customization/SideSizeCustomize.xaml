@@ -1,0 +1,46 @@
+﻿<Window x:Class="PointOfSale.Customization.SideSizeCustomize"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PointOfSale.Customization"
+        mc:Ignorable="d"
+        Title="SideSizeCustomize" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="SmallButton"
+                    Grid.Column="0"
+                    VerticalContentAlignment="Top"
+                    Content="Small"
+                    FontSize="30"
+                    Click="Button_Click"/>
+
+            <Button x:Name="MediumButton"
+                    Grid.Column="1"
+                    VerticalContentAlignment="Top"
+                    Content="Medium"
+                    FontSize="30"
+                    Click="Button_Click"/>
+            
+            <Button x:Name="LargeButton"
+                    Grid.Column="2"
+                    VerticalContentAlignment="Top"
+                    Content="Large"
+                    FontSize="30"
+                    Click="Button_Click"/>
+
+        </Grid>
+        <TextBlock x:Name="SideSizeCustomizationLabel" Text="Side Sizes" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="30" HorizontalAlignment="Center" />
+    </Grid>
+</Window>

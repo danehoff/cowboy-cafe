@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
+using CowboyCafe.Data.Sides;
+using CowboyCafe.Data.Drinks;
+using CowboyCafe.Data.Enums;
+
 
 namespace CowboyCafe.DataTests
 {

@@ -21,12 +21,20 @@
         <TextBlock FontSize="30">Customize this order of Water...</TextBlock>
 
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
-            <CheckBox IsChecked="{Binding Path=Lemon}"/>
-            <TextBlock Text="Lemon"/>
+            <CheckBox IsChecked="{Binding Path=Lemon}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2"/>
+                </CheckBox.LayoutTransform>
+                <TextBlock Text="Lemon"/>
+            </CheckBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1">
-            <CheckBox IsChecked="{Binding Path=Ice}"/>
-            <TextBlock Text="Ice"/>
+            <CheckBox IsChecked="{Binding Path=Ice}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2"/>
+                </CheckBox.LayoutTransform>
+                <TextBlock Text="Ice"/>
+            </CheckBox>
         </StackPanel>
     </Grid>
 </UserControl>

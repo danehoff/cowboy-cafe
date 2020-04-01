@@ -14,6 +14,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
 using CowboyCafe.Data;
+using CowboyCafe.Data.Sides;
+using CowboyCafe.Data.Drinks;
+using CowboyCafe.Data.Enums;
 
 
 namespace CowboyCafe.Data
@@ -27,6 +30,7 @@ namespace CowboyCafe.Data
         /// Keeps track of the order number before 
         /// </summary>
         private uint lastOrderNumber = 0;
+
 
         /// <summary>
         /// Calculates the subtotal of the total order
@@ -46,8 +50,38 @@ namespace CowboyCafe.Data
 
                 return totalPrice;
             }
+           /// private set;
         }
-        
+
+        /// <summary>
+        /// This method assists in updating the subtotal for changing sizes
+        /// </summary>
+        /// <param name="i">The item</param>
+        /// <param name="new_size">The size the item is suppose to be</param>
+       /// public void subtotalHelperFunction(IOrderItem i, Size new_size)
+      ///  {
+           /// Side s;
+           /// Drink d;
+
+          ///  Subtotal -= i.Price;
+          ///  if (i is Side)
+          ///  {
+          ///      s = (Side)i;
+           ///     s.Size = new_size;
+             ///   Subtotal += s.Price;
+            ///}
+          ///  else
+           /// {
+                ///d = (Drink)i;
+               /// d.Size = new_size;
+             ///   Subtotal += d.Price;
+          ///  }
+           /// itemPrices.RemoveAt(itemPrices.Count - 1);
+
+           /// string priceOfItemAsCurrency = String.Format("{0:C}", i.Price);
+            ///itemPrices.Add(priceOfItemAsCurrency);
+        ///}
+
         /// <summary>
         /// Updates the order number.
         /// </summary>
@@ -66,6 +100,17 @@ namespace CowboyCafe.Data
         /// Sends items into a array 
         /// </summary>
         public IEnumerable<IOrderItem> Items => items.ToArray();
+
+        /// <summary>
+        /// The list of the item prices on the currentn order
+        /// </summary>
+        private List<string> itemPrices;
+
+
+        /// <summary>
+        /// Property to return the list of item prices in the current order 
+        /// </summary>
+        public IEnumerable<string> ItemPrices { get { return itemPrices.ToArray(); } }
 
 
 

@@ -4,27 +4,31 @@
 
 * Edited by: (If you are not the original author like the CowpokeChili class)
 
-* Class name: Baked Beans
+* Class name: Chili Cheese Fries
 
-* Purpose: Holds the price and calories of the baked beans based on size.
+* Purpose: Holds the price and calories of the chili cheese fries based on size.
 
 */
 using System;
 using System.Collections.Generic;
 using System.Text;
+using CowboyCafe.Data;
+using CowboyCafe.Data.Sides;
+using CowboyCafe.Data.Drinks;
+using CowboyCafe.Data.Enums;
 
-namespace CowboyCafe.Data
+
+namespace CowboyCafe.Data.Sides
 {
     /// <summary>
-    /// A class representing the Baked Beans Side
+    /// A class representing the chili cheese fries side
     /// </summary>
-    public class BakedBeans : Side
+    public class ChiliCheeseFries : Side
     {
         /// <summary>
-        /// The price of the baked beans based on size
+        /// The price of the fries based on size.
         /// </summary>
-        public override double Price
-        {
+        public override double Price {
 
             get
             {
@@ -33,13 +37,13 @@ namespace CowboyCafe.Data
                 {
 
                     case Size.Large:
-                        return 1.99;
+                        return 3.99;
 
                     case Size.Medium:
-                        return 1.79;
+                        return 2.99;
 
                     case Size.Small:
-                        return 1.59;
+                        return 1.99;
 
                     default:
                         throw new NotImplementedException("Unknown Price.");
@@ -51,10 +55,9 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// The Calories of the baked beans based on size
+        /// The calories of the fries baed on size
         /// </summary>
-        public override uint Calories
-        {
+        public override uint Calories {
             get
             {
 
@@ -62,13 +65,13 @@ namespace CowboyCafe.Data
                 {
 
                     case Size.Large:
-                        return 410;
-
+                        return 610;
+                        
                     case Size.Medium:
-                        return 378;
-
+                        return 524;
+                     
                     case Size.Small:
-                        return 312;
+                        return 433;
 
                     default:
                         throw new NotImplementedException("Unknown Size.");
@@ -79,15 +82,12 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Readable string representing side Baked Beans.
-        /// </summary>
+        /// Readable string representing entreeside
         /// <returns></returns>
         public override string ToString()
         {
-            return Size + " Baked Beans";
+            return Size +  " Chili Cheese Fries";
         }
-
-        
 
     }
 }

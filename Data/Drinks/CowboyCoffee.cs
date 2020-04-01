@@ -12,8 +12,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using CowboyCafe.Data.Enums;
 
-namespace CowboyCafe.Data
+namespace CowboyCafe.Data.Drinks
 {
     /// <summary>
     /// Cowboy Coffee Class
@@ -92,6 +93,7 @@ namespace CowboyCafe.Data
             set { 
                 roomForCream = value;
                 NotifyPropertyChanged("RoomForCream");
+                NotifyPropertyChanged("SpecialInstructions");
             }
 
         }
@@ -110,6 +112,7 @@ namespace CowboyCafe.Data
             set { 
                 decaf = value;
                 NotifyPropertyChanged("Decaf");
+                NotifyPropertyChanged("SpecialInstructions");
             }
 
         }
@@ -130,6 +133,7 @@ namespace CowboyCafe.Data
             set { 
                 ice = value;
                 NotifyPropertyChanged("Ice");
+                NotifyPropertyChanged("SpecialInstructions");
             
             }
 

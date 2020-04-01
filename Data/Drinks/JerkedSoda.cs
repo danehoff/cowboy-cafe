@@ -12,8 +12,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using CowboyCafe.Data.Enums;
 
-namespace CowboyCafe.Data
+namespace CowboyCafe.Data.Drinks
 {
     /// <summary>
     /// Jerked Soda Class

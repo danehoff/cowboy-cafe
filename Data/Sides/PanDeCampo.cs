@@ -4,24 +4,30 @@
 
 * Edited by: (If you are not the original author like the CowpokeChili class)
 
-* Class name: Corn Dodgers
+* Class name: Pan de Campo
 
-* Purpose: Holds the price and calories of the corn dodgers based on size.
+* Purpose: Holds the price and calories of the baked pan de campo based on size.
 
 */
 using System;
 using System.Collections.Generic;
 using System.Text;
+using CowboyCafe.Data;
+using CowboyCafe.Data.Sides;
+using CowboyCafe.Data.Drinks;
+using CowboyCafe.Data.Enums;
 
-namespace CowboyCafe.Data
+
+namespace CowboyCafe.Data.Sides
 {
     /// <summary>
-    /// A class representing corn dodger side
+    /// A class representing the pan de campo side
     /// </summary>
-    public class CornDodgers : Side
+    public class PanDeCampo : Side
     {
+
         /// <summary>
-        /// The price of the corn dodger's side based on size
+        /// The price of the pan de campo based on size
         /// </summary>
         public override double Price
         {
@@ -51,7 +57,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// The calories of the corn dodgers based on size
+        /// The calorires of the pan de campo based on side.
         /// </summary>
         public override uint Calories
         {
@@ -62,13 +68,13 @@ namespace CowboyCafe.Data
                 {
 
                     case Size.Large:
-                        return 717;
+                        return 367;
 
                     case Size.Medium:
-                        return 685;
+                        return 269;
 
                     case Size.Small:
-                        return 512;
+                        return 227;
 
                     default:
                         throw new NotImplementedException("Unknown Size.");
@@ -78,13 +84,15 @@ namespace CowboyCafe.Data
             }
         }
 
+
         /// <summary>
-        /// Readable string representing side Corn Dodgers.
+        /// Readable string representing side Pan de campo.
         /// </summary>
         /// <returns></returns>
         public override string ToString()
         {
-            return Size + " Corn Dodgers";
+            return Size + " Pan de Campo";
         }
+
     }
 }

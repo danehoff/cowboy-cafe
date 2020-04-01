@@ -31,6 +31,7 @@ namespace CowboyCafe.Data
             set { 
                 cheese = value;
                 NotifyPropertyChanged("Cheese");
+                NotifyPropertyChanged("SpecialInstructions");
             }
         }
 
@@ -44,6 +45,7 @@ namespace CowboyCafe.Data
             set { 
                 sourCream = value; 
                 NotifyPropertyChanged("SourCream");
+                NotifyPropertyChanged("SpecialInstructions");
             }
         }
 
@@ -57,6 +59,7 @@ namespace CowboyCafe.Data
             set { 
                 greenOnions = value; 
                 NotifyPropertyChanged("GreenOnions");
+                NotifyPropertyChanged("SpecialInstructions");
             }
         }
 
@@ -70,6 +73,7 @@ namespace CowboyCafe.Data
             set { 
                 tortillaStrips = value; 
                 NotifyPropertyChanged("TortillaStrips");
+                NotifyPropertyChanged("SpecialInstructions");
             }
         }
 

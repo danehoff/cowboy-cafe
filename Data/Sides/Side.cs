@@ -4,61 +4,59 @@
 
 * Edited by: (If you are not the original author like the CowpokeChili class)
 
-* Class name: Drink
+* Class name: Entree
 
-* Purpose: Represents for the drinks and can be overridden by derived classes.
+* Purpose: Represents for the sides and can be overridden by derived classes.
 
 */
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Text;
+using System.ComponentModel;
+using CowboyCafe.Data;
+using CowboyCafe.Data.Sides;
+using CowboyCafe.Data.Drinks;
+using CowboyCafe.Data.Enums;
 
-namespace CowboyCafe.Data
+namespace CowboyCafe.Data.Sides
 {
     /// <summary>
-    /// Base Class for representing sides.
+    /// A base class representing a side
     /// </summary>
-    public abstract class Drink : IOrderItem, INotifyPropertyChanged
+    public abstract class Side : IOrderItem, INotifyPropertyChanged
     {
-
         /// <summary>
         /// Event for property changed with a clicked button
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
-        /// Gets the size of the Drink
+        /// Gets the size of the Side
         /// </summary>
         public virtual Size Size { get; set; }
 
         /// <summary>
-        /// Gets the price of the entree
+        /// Gets the price of the side
         /// </summary>
         public abstract double Price { get; }
 
         /// <summary>
-        /// Gets the calories of the entree
+        /// Gets the calories of the side
         /// </summary>
         public abstract uint Calories { get; }
 
         /// <summary>
-        /// Gets the special instructions for the entree
+        /// Gets the Special instructions for the sides.
         /// </summary>
-        public abstract List<string> SpecialInstructions { get; }
-
-        /// <summary>
-        /// Gets and sets whether the drink has ice
-        /// </summary>
-        public virtual bool Ice { get; set; }
+        public virtual List<string> SpecialInstructions => new List<string>();
 
         /// <summary>
         /// Notifys our special instructions of the change made
         /// </summary>
-        protected void NotifyPropertyChanged (string property){
+        protected void NotifyPropertyChanged (string property)
+        {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
         }
-
     }
 }

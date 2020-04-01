@@ -21,13 +21,23 @@
             </Grid.RowDefinitions>
             <TextBlock FontSize="30">Customize this order of Angry Chicken...</TextBlock>
             <StackPanel  Orientation="Horizontal" Grid.Column="1"  Grid.Row="1">
-                <CheckBox IsChecked="{Binding Path=Bread}"/>
-                <TextBlock Text="Bread"/>
+                <CheckBox IsChecked="{Binding Path=Bread}">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="2" ScaleY="2"/>
+                    </CheckBox.LayoutTransform>
+                    <TextBlock Text="Bread" />
+                </CheckBox>
+            
 
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1">
-                <CheckBox IsChecked="{Binding Path=Pickle}"/>
-                <TextBlock Text="Pickle"/>
+                <CheckBox IsChecked="{Binding Path=Pickle}">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="2" ScaleY="2"/>
+                    </CheckBox.LayoutTransform>
+                    <TextBlock Text="Pickle"/>
+                </CheckBox>
+               
             </StackPanel>
 
 

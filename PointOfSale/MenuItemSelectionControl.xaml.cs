@@ -4,7 +4,7 @@
 
 * Edited by: (If you are not the original author like the CowpokeChili class)
 
-* Class name: Jerked Soda
+* Class name: Menu Item Selection Control
 
 * Purpose: Represents the buttons for the order items
 
@@ -26,6 +26,9 @@ using CowboyCafe.Data;
 using PointOfSale.Customize;
 using PointOfSale.Customization;
 using PointOfSale.ExtensionMethods;
+using CowboyCafe.Data.Sides;
+using CowboyCafe.Data.Drinks;
+using CowboyCafe.Data.Enums;
 
 
 namespace PointOfSale

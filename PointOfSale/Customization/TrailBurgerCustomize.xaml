@@ -24,25 +24,45 @@
         </Grid.RowDefinitions>
         <TextBlock FontSize="30">Customize this order of Burger...</TextBlock>
         <StackPanel  Orientation="Horizontal" Grid.Column="1"  Grid.Row="1">
-            <CheckBox IsChecked="{Binding Path=Cheese}"/>
-            <TextBlock Text="Cheese"/>
+            <CheckBox IsChecked="{Binding Path=Cheese}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2"/>
+                </CheckBox.LayoutTransform>
+                <TextBlock Text="Cheese"/>
+            </CheckBox>
 
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1">
-            <CheckBox IsChecked="{Binding Path=Bun}"/>
-            <TextBlock Text="Bun"/>
+            <CheckBox IsChecked="{Binding Path=Bun}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2"/>
+                </CheckBox.LayoutTransform>
+                <TextBlock Text="Bun"/>
+            </CheckBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
-            <CheckBox IsChecked="{Binding Path=Ketchup}"/>
-            <TextBlock Text="Ketchup"/>
+            <CheckBox IsChecked="{Binding Path=Ketchup}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2"/>
+                </CheckBox.LayoutTransform>
+                <TextBlock Text="Ketchup"/>
+            </CheckBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1">
-            <CheckBox IsChecked="{Binding Path=Mustard}"/>
-            <TextBlock Text="Mustard"/>
+            <CheckBox IsChecked="{Binding Path=Mustard}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2"/>
+                </CheckBox.LayoutTransform>
+                <TextBlock Text="Mustard"/>
+            </CheckBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="1">
-            <CheckBox IsChecked="{Binding Path=Pickle}"/>
-            <TextBlock Text="Pickle"/>
+            <CheckBox IsChecked="{Binding Path=Pickle}">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2"/>
+                </CheckBox.LayoutTransform>
+                <TextBlock Text="Pickle"/>
+            </CheckBox>
         </StackPanel>
 
     </Grid>
