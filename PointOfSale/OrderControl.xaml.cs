@@ -24,6 +24,9 @@ using CowboyCafe.Data;
 using CowboyCafe.Data.Sides;
 using CowboyCafe.Data.Drinks;
 using CowboyCafe.Data.Enums;
+using PointOfSale.Customize;
+using PointOfSale.Customization;
+using PointOfSale.ExtensionMethods;
 
 namespace PointOfSale
 {
@@ -34,12 +37,14 @@ namespace PointOfSale
     {
 
         MenuItemSelectionControl menu = new MenuItemSelectionControl();
+        Order context;
 
         public OrderControl()
         {
             InitializeComponent();
             var data = new Order();
             this.DataContext = data;
+            context = data;
 
         }
 
@@ -61,6 +66,7 @@ namespace PointOfSale
         {
 
             SwapScreen(menu);
+
         }
 
         /// <summary>
@@ -77,7 +83,10 @@ namespace PointOfSale
         /// </summary>
         private void CompleteOrderButton_Click(object sender, RoutedEventArgs e)
         {
-            this.DataContext = new Order();
+
+            var screen = new Transactions(context);
+            SwapScreen(screen);
+
         }
     }
 }

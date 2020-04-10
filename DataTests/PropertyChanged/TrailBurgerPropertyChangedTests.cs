@@ -7,6 +7,7 @@ using System.ComponentModel;
 using CowboyCafe.Data.Sides;
 using CowboyCafe.Data.Drinks;
 using CowboyCafe.Data.Enums;
+using CowboyCafe.Data.Entrees;
 
 
 namespace CowboyCafe.DataTests.PropertyChanged

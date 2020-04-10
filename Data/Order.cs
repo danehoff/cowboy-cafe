@@ -53,6 +53,22 @@ namespace CowboyCafe.Data
            /// private set;
         }
 
+        public double TaxedSubtotal
+        {
+
+            get
+            {
+
+                double total = 0.0;
+                total = Subtotal;
+                total = (Subtotal * 0.16) + total;
+
+                return total;
+
+            }
+
+        }
+
         /// <summary>
         /// This method assists in updating the subtotal for changing sizes
         /// </summary>
@@ -104,13 +120,16 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The list of the item prices on the currentn order
         /// </summary>
-        private List<string> itemPrices;
+        private List<string> itemPrices = new List<string>();
 
 
         /// <summary>
         /// Property to return the list of item prices in the current order 
         /// </summary>
         public IEnumerable<string> ItemPrices { get { return itemPrices.ToArray(); } }
+
+       /// public string[] Prices { get { return itemPrices.ToArray(); } }
+
 
 
 
@@ -160,6 +179,8 @@ namespace CowboyCafe.Data
             if(e.PropertyName == "Price") PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
 
         }
+
+
         
 
     }

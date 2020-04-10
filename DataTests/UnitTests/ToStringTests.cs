@@ -6,6 +6,7 @@ using CowboyCafe.Data;
 using CowboyCafe.Data.Sides;
 using CowboyCafe.Data.Drinks;
 using CowboyCafe.Data.Enums;
+using CowboyCafe.Data.Entrees;
 
 
 namespace CowboyCafe.DataTests

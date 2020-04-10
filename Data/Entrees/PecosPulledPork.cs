@@ -4,42 +4,42 @@
 
 * Edited by: (If you are not the original author like the CowpokeChili class)
 
-* Class name: Angry Chicken
+* Class name: Cowpoke Chili
 
-* Purpose: To hold the values for all the attributes of the angry chicken entree and the special instructions for preparation.
+* Purpose:Holds the values for the pecos pulled pork's entree ingredients, attributes, and the special instructions for preparation.
 
 */
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CowboyCafe.Data
+namespace CowboyCafe.Data.Entrees
 {
     /// <summary>
-    /// A class representing the Angry Chicken entree
+    /// A class representing the Pulled Pork entree
     /// </summary>
-    public class AngryChicken : Entree
+    public class PecosPulledPork : Entree
     {
 
         /// <summary>
-        /// The price of the chicken
+        /// The price of the pulled pork sandwich
         /// </summary>
         public override double Price
         {
             get
             {
-                return 5.99;
+                return 5.88;
             }
         }
 
         /// <summary>
-        /// The calories of the chicken
+        /// The calories of the pulled pork sandwich
         /// </summary>
         public override uint Calories
         {
             get
             {
-                return 190;
+                return 528;
             }
         }
 
@@ -65,7 +65,6 @@ namespace CowboyCafe.Data
 
                 bread = value;
                 NotifyPropertyChanged("Bread");
-                NotifyPropertyChanged("SpecialInstructions");
 
 
             }
@@ -95,14 +94,13 @@ namespace CowboyCafe.Data
 
                 pickle = value;
                 NotifyPropertyChanged("Pickle");
-                NotifyPropertyChanged("SpecialInstructions");
 
             }
 
         }
 
         /// <summary>
-        /// Special instructions for the preparation of the chicken
+        /// Special instructions for the preparation of the sandwich
         /// </summary>
         public override List<string> SpecialInstructions
         {
@@ -118,14 +116,14 @@ namespace CowboyCafe.Data
 
             }
         }
-
         /// <summary>
-        /// Readable string representing entree Angry Chicken.
+        /// Readable string representing entree Pecos Pulled Pork.
         /// </summary>
         /// <returns></returns>
         public override string ToString()
         {
-            return "Angry Chicken";
+            return "Pecos Pulled Pork";
         }
+
     }
 }

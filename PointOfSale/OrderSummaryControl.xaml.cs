@@ -27,6 +27,7 @@ using PointOfSale.ExtensionMethods;
 using CowboyCafe.Data.Sides;
 using CowboyCafe.Data.Drinks;
 using CowboyCafe.Data.Enums;
+using CowboyCafe.Data.Entrees;
 
 namespace PointOfSale
 {
