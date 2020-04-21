@@ -1,0 +1,54 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<h1>Welcome to the Cowboy Cafe!</h1>
+<p>We at Cowboy Cafe are proud to bring you authentic trail meals from the American West. Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas. Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger! You’ve had a hard ride - so take it easy with us.</p>
+
+<h2>Entrees</h2>
+
+<ul class="entree-list">
+    @foreach (CowboyCafe.Data.Entrees.Entree entree in CowboyCafe.Data.Menu.Entrees())
+    {
+        <li>
+            <div class="menu-item">
+                @entree
+                @entree.Calories
+                @entree.Price
+            </div>
+        </li>
+    }
+</ul>
+<h3>Sides</h3>
+<ul class="side-list">
+    @foreach (CowboyCafe.Data.Sides.Side side in CowboyCafe.Data.Menu.Sides())
+    {
+        <li>
+            <div class="menu-item">
+                @side
+                @side.Size
+                @side.Calories
+                @side.Price
+            </div>
+        </li>
+    }
+</ul>
+<h4>Drinks</h4>
+<ul class="drink-list">
+    @foreach (CowboyCafe.Data.Drinks.Drink drink in CowboyCafe.Data.Menu.Drinks())
+    {
+        <li>
+            <div class="menu-item">
+                @drink
+                @drink.Size
+                @drink.Calories
+                @drink.Price
+            </div>
+        </li>
+    }
+</ul>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
