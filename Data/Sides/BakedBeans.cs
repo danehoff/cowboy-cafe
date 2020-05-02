@@ -67,7 +67,7 @@ namespace CowboyCafe.Data.Sides
                 {
 
                     case Size.Large:
-                        return 410;
+                        return 410; 
 
                     case Size.Medium:
                         return 378;

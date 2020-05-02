@@ -101,5 +101,117 @@ namespace CowboyCafe.Data
 
         }
 
+        /// <summary>
+        /// Filters our search to find the entered value
+        /// </summary>
+        /// <param name="food">Items of food</param>
+        /// <param name="name">Name entered</param>
+        /// <returns>Items with searched name</returns>
+        public static IEnumerable<IOrderItem> FilterSearch(IEnumerable<IOrderItem> food, string name)
+        {
+
+            if (name == null || name == "")
+            {
+
+                return food;
+
+            }
+
+            List<IOrderItem> searchedFood = new List<IOrderItem>();
+
+            foreach (IOrderItem allFood in food)
+            {
+                if (allFood.ToString().Contains(name, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    searchedFood.Add(allFood);
+                }
+            }
+
+
+            return searchedFood;
+        }
+
+        /// <summary>
+        /// Filters food by the calorie value
+        /// </summary>
+        /// <param name="foods">list of foods</param>
+        /// <param name="min">Min calorie value</param>
+        /// <param name="max">Max calorie value</param>
+        /// <returns>Fodds in the range of calories</returns>
+        public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> foods, uint? min, uint? max)
+        {
+
+            if (min == null && max == null) return foods;
+            var results = new List<IOrderItem>();
+
+            if (min == null)
+            {
+                foreach (IOrderItem food in foods)
+                {
+                    if (food.Calories <= max) results.Add(food);
+                }
+                return results;
+            }
+            if (max == null)
+            {
+                foreach (IOrderItem food in foods)
+                {
+                     if (food.Calories >= min) results.Add(food);
+                }
+                return results;
+            }
+
+            foreach (IOrderItem food in foods)
+            {
+                if (food.Calories >= min && food.Calories <= max)
+                {
+                    results.Add(food);
+                }
+            }
+            return results;
+
+        }
+
+        /// <summary>
+        /// Filters food by prices
+        /// </summary>
+        /// <param name="foods">List of items</param>
+        /// <param name="min">Min price of food</param>
+        /// <param name="max">Max price of food</param>
+        /// <returns>Food within price range</returns>
+        public static IEnumerable<IOrderItem> FilterByPrices(IEnumerable<IOrderItem> foods, double? min, double? max)
+        {
+
+            if (min == null && max == null) return foods;
+            var results = new List<IOrderItem>();
+
+            if (min == null)
+            {
+                foreach (IOrderItem food in foods)
+                {
+                    if (food.Price <= max) results.Add(food);
+                }
+                return results;
+            }
+            if (max == null)
+            {
+                foreach (IOrderItem food in foods)
+                {
+                    if (food.Price >= min) results.Add(food);
+                }
+                return results;
+            }
+
+            foreach (IOrderItem food in foods)
+            {
+                if (food.Price >= min && food.Price <= max)
+                {
+                    results.Add(food);
+                }
+            }
+            return results;
+
+        }
+
     }
 }
