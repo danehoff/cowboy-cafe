@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using CowboyCafe.Data;
+using CowboyCafe.Data.Entrees;
+using CowboyCafe.Data.Enums;
 
 namespace Website.Pages
 {
@@ -43,6 +45,11 @@ namespace Website.Pages
         /// </summary>
         public IEnumerable<IOrderItem> Sides { get; set; }
 
+
+        public IEnumerable<SodaFlavor> Flavors { get; set; }
+
+        public IEnumerable<IOrderItem> AllFood { get; set; }
+
         /// <summary>
         /// Value of the current lowest calorie item
         /// </summary>
@@ -68,6 +75,10 @@ namespace Website.Pages
         [BindProperty(SupportsGet = true)]
         public double? PricesMax { get; set; }
 
+        [BindProperty(SupportsGet = true)]
+        public string [] CategoryType { get; set; }
+
+
         /// <summary>
         /// Reads index model
         /// </summary>
@@ -80,12 +91,24 @@ namespace Website.Pages
         /// <summary>
         /// Gets these for the model
         /// </summary>
-        public void OnGet()
+        public void OnGet(double? PricesMin, double? PricesMax, uint? CaloriesMin, uint? CaloriesMax)
         {
+            
+            this.PricesMax = PricesMax;
+            this.PricesMin = PricesMin;
+            this.CaloriesMax = CaloriesMax;
+            this.CaloriesMin = CaloriesMin;
+            
 
+            SearchTerms = Request.Query["SearchTerms"];
+            FoodCat = Request.Query["FoodCat"];
+
+            
             this.Entrees = Menu.Entrees();
             this.Drinks = Menu.Drinks();
             this.Sides = Menu.Sides();
+            this.Flavors = Menu.JerkedFlavor();
+            /*
             Entrees = Menu.FilterSearch(Entrees, SearchTerms);
             Sides = Menu.FilterSearch(Sides, SearchTerms);
             Drinks = Menu.FilterSearch(Drinks, SearchTerms);
@@ -95,6 +118,40 @@ namespace Website.Pages
             Entrees = Menu.FilterByPrices(Entrees, PricesMin, PricesMax);
             Sides = Menu.FilterByPrices(Sides, PricesMin, PricesMax);
             Drinks = Menu.FilterByPrices(Drinks, PricesMin, PricesMax);
+            */
+
+            AllFood = Menu.CompleteMenu();
+
+            
+            if (SearchTerms != null)
+            {
+
+                AllFood = AllFood.Where(food => food.ToString().Contains(SearchTerms, StringComparison.InvariantCultureIgnoreCase));
+
+            }
+
+            if(FoodCat != null)
+            {
+
+                AllFood = AllFood.Where(food => food.ToString().Contains(FoodCat.ToString(), StringComparison.InvariantCultureIgnoreCase));
+
+            }
+
+            if(PricesMin != null && PricesMax != null)
+            {
+
+                AllFood = AllFood.Where(food => food.Price.ToString().Contains(PricesMin.ToString(), StringComparison.InvariantCultureIgnoreCase));
+                AllFood = AllFood.Where(food => food.Price.ToString().Contains(PricesMax.ToString(), StringComparison.InvariantCultureIgnoreCase));
+            
+            }
+
+            if (CaloriesMin != null && CaloriesMax != null)
+            {
+
+                AllFood = AllFood.Where(food => food.Calories.ToString().Contains(CaloriesMin.ToString(), StringComparison.InvariantCultureIgnoreCase));
+                AllFood = AllFood.Where(food => food.Calories.ToString().Contains(CaloriesMax.ToString(), StringComparison.InvariantCultureIgnoreCase));
+            }
+            
 
         }
 

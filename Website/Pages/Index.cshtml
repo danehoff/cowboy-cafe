@@ -13,19 +13,22 @@
         <input type="submit" value="Search">
     </div>
 
-    <div id="filters">
-
-        <h4>Entrees</h4>
+    <div id="filters" class="type-food">
+        <h7>Entrees</h7>
         <label>
             <input type="checkbox" name="FoodCat" value="entree-list" checked="@Model.FoodCat.Contains("entree-list")" />
         </label>
-        <h4>Drinks</h4>
+        <h7>Drinks</h7>
         <label>
             <input type="checkbox" name="FoodCat" value="drink-list" checked="@Model.FoodCat.Contains("drink-list")" />
         </label>
-        <h4>Sides</h4>
+        <h7>Sides</h7>
         <label>
             <input type="checkbox" name="FoodCat" value="side-list" checked="@Model.FoodCat.Contains("side-list")" />
+        </label>
+        <h7>Soda Flavors</h7>
+        <label>
+            <input type="checkbox" name="FoodCat" value="flavor-list" checked="@Model.FoodCat.Contains("flavor-list")" />
         </label>
 
         <h4>Calorie Total</h4>
@@ -33,7 +36,7 @@
             Between
             <input name="CaloriesMin" value="@Model.CaloriesMin" type="number" min="0" max="1000" step="0.1" placeholder="min" />
             and
-            <input name="CaloriesMax"  value="@Model.CaloriesMax" type="number" min="0" max="1000" step="0.1" placeholder="min" />
+            <input name="CaloriesMax" value="@Model.CaloriesMax" type="number" min="0" max="1000" step="0.1" placeholder="min" />
         </div>
 
         <h4>Price Total</h4>
@@ -43,65 +46,78 @@
             and
             <input name="PricesMax" value="@Model.PricesMax" type="number" min="0" max="1000" step="0.1" placeholder="min" />
         </div>
-
-
     </div>
 
 </form>
 
 
-@if (Model.FoodCat.Contains("entree-list") || Model.FoodCat.Length == 0)
-{
-    <h2>Entrees</h2>
-    <ul class="entree-list">
-        @foreach (CowboyCafe.Data.Entrees.Entree entree in Model.Entrees)
-        {
-            <li>
-                <div class="menu-item">
-                    @entree
-                    @entree.Calories
-                    @entree.Price
-                </div>
-            </li>
-        }
-    </ul>
-}
-@if (Model.FoodCat.Contains("side-list") || Model.FoodCat.Length == 0)
-{
-<h3>Sides</h3>
-<ul class="side-list">
-    @foreach (CowboyCafe.Data.Sides.Side side in Model.Sides)
+<div class="type-search">
+    @if (Model.FoodCat.Contains("entree-list") || Model.FoodCat.Length == 0)
     {
-        <li>
-            <div class="menu-item">
-                @side
-                @side.Size
-                @side.Calories
-                @side.Price
-            </div>
-        </li>
+        <h3>Entrees</h3>
+        <ul class="entree-list">
+            @foreach (CowboyCafe.Data.Entrees.Entree entree in Model.Entrees)
+            {
+                <li>
+                    <div class="menu-item">
+                        @entree
+                        @entree.Calories
+                        @entree.Price
+                    </div>
+                </li>
+            }
+        </ul>
     }
-</ul>
-}
+    @if (Model.FoodCat.Contains("side-list") || Model.FoodCat.Length == 0)
+    {
+        <h3>Sides</h3>
+        <ul class="side-list">
+            @foreach (CowboyCafe.Data.Sides.Side side in Model.Sides)
+            {
+                <li>
+                    <div class="menu-item">
+                        @side
+                        @side.Size
+                        @side.Calories
+                        @side.Price
+                    </div>
+                </li>
+            }
+        </ul>
+    }
 
-@if(Model.FoodCat.Contains("drink-list") || Model.FoodCat.Length == 0) 
-{ 
-<h4>Drinks</h4>
-<ul class="drink-list">
-    @foreach (CowboyCafe.Data.Drinks.Drink drink in Model.Drinks)
+    @if (Model.FoodCat.Contains("drink-list") || Model.FoodCat.Length == 0)
     {
-        <li>
-            <div class="menu-item">
-                @drink
-                @drink.Size
-                @drink.Calories
-                @drink.Price
-            </div>
-        </li>
+        <h3>Drinks</h3>
+        <ul class="drink-list">
+            @foreach (CowboyCafe.Data.Drinks.Drink drink in Model.Drinks)
+            {
+                <li>
+                    <div class="menu-item">
+                        @drink
+                        @drink.Size
+                        @drink.Calories
+                        @drink.Price
+                    </div>
+                </li>
+            }
+        </ul>
     }
-</ul>
-}
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @if (Model.FoodCat.Contains("flavor-list") || Model.FoodCat.Length == 0)
+    {
+        <h3>Jerked Soda Flavors</h3>
+        <ul class="flavor-list">
+            @foreach (CowboyCafe.Data.Enums.SodaFlavor sodaFlavor in CowboyCafe.Data.Menu.JerkedFlavor())
+            {
+                <li>
+                    <div class="menu-item">
+                        @sodaFlavor
+                    </div>
+                </li>
+            }
+        </ul>
+    }
 </div>
+    <div class="text-center">
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core"> building Web apps with ASP.NET Core</a>.</p>
+    </div>

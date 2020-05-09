@@ -17,6 +17,7 @@ using CowboyCafe.Data.Sides;
 using CowboyCafe.Data.Drinks;
 using CowboyCafe.Data.Enums;
 using CowboyCafe.Data.Entrees;
+using System.Linq;
 
 namespace CowboyCafe.Data
 {
@@ -98,6 +99,23 @@ namespace CowboyCafe.Data
             items.Add(new CowboyCoffee());
             items.Add(new JerkedSoda());
             return items;
+
+        }
+
+        /// <summary>
+        /// Gets the possible Jerked Soda Flavors
+        /// </summary>
+        public static IEnumerable<SodaFlavor> JerkedFlavor()
+        {
+            List<SodaFlavor> flavors = new List<SodaFlavor>();
+
+            flavors.Add(SodaFlavor.BirchBeer);
+            flavors.Add(SodaFlavor.CreamSoda);
+            flavors.Add(SodaFlavor.OrangeSoda);
+            flavors.Add(SodaFlavor.RootBeer);
+            flavors.Add(SodaFlavor.Sarsparilla);
+
+            return flavors;
 
         }
 
@@ -212,6 +230,42 @@ namespace CowboyCafe.Data
             return results;
 
         }
+        /*
+        public static IEnumerable<IOrderItem> FilterByCategory(IEnumerable<IOrderItem> foods, string [] categorys)
+        {
 
+            if (categorys == null || categorys.Count() == 0) return foods;
+
+            var entrees = categorys.OfType<Entree>();
+            var drinks = categorys.OfType<Drink>();
+            var sides = categorys.OfType<Side>();
+
+            if (categorys.Contains("Entree"))
+            {
+
+                foodCat = foods.Where(item => categorys.Contains("Entree") && item is Entree);
+
+            }
+
+            if (categorys.Contains("Drink"))
+            {
+
+                foodCat = foods.Where(item => categorys.Contains("Drink") && item is Drink);
+
+            }
+
+            if (categorys.Contains("Side"))
+            {
+
+                foodCat = foods.Where(item => categorys.Contains("Side") && item is Side);
+
+            }
+
+
+
+            
+
+        }
+        */
     }
 }
